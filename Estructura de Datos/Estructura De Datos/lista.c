@@ -52,3 +52,92 @@ void mostrarUnNodo(nodo* nodo)
 {
     printf("dato: %i \n", nodo->dato);
 }
+
+void mostrarListaRecursivo(nodo * lista)
+{
+    if(lista!=NULL)
+    {
+        mostrarUnNodo(lista);
+        mostrarListaRecursivo(lista->siguiente);
+    }
+}
+
+nodo* borrarNodoBuscado(nodo* lista, int num){
+    nodo* seg;
+    nodo* ante;
+    if((lista != NULL) && (lista->dato==num)){
+        nodo* aux = lista;
+        lista = lista->siguiente;
+        free(aux);
+    }
+    else{
+        seg = lista;
+        while((seg != NULL) && (seg->dato!=num)){
+            ante = seg;
+            seg = seg->siguiente;
+        }
+
+        if(seg!=NULL){
+            ante->siguiente = seg->siguiente;
+            free(seg);
+        }
+    }
+    return lista;
+}
+
+nodo * borrarTodosLosN(nodo* lista, int num){
+    nodo * seg=lista;
+    int veces=0;
+    while(seg!=NULL){
+            veces++;
+        seg=seg->siguiente;
+    }
+    int i=0;
+    while(i<veces){
+        lista=borrarNodoBuscado(lista,num);
+        i++;
+    }
+
+    return lista;
+}
+
+int verPrimero(nodo * lista)
+{
+    int rta;
+    if(lista)
+    {
+        rta=lista->dato;
+    }
+    return rta;
+
+}
+nodo * borrarPrimerNodo(nodo * lista)
+{
+    nodo * aux=lista;
+    lista=lista->siguiente;
+    free(aux);
+    return lista;
+}
+nodo * IngresarNuevoDato()
+{
+    int dato;
+    nodo * nuevoNodo;
+    printf("\nIngrese un numero:");
+    scanf("%d", &dato);
+    nuevoNodo = crearNodo(dato);
+    return nuevoNodo;
+}
+void recorrerYmostrar(nodo * lista)
+{
+    nodo * aux=lista;
+    while(aux!=NULL)
+    {
+        mostrarNodo(aux);
+        aux=aux->siguiente;
+    }
+}
+void mostrarNodo(nodo * aux)
+{
+    printf("%d ",aux->dato);
+}
+

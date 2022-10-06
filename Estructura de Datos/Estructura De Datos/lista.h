@@ -15,6 +15,13 @@ nodo * crearNodo(int dato);
 nodo * agregarPrincipio(nodo *lista, nodo *nuevoNodo);
 nodo * buscarUltimo(nodo *lista);
 void mostrarUnNodo(nodo *nodo);
-
+void mostrarListaRecursivo(nodo * lista);
+nodo* borrarNodoBuscado(nodo* lista, int num);
+nodo * borrarTodosLosN(nodo* lista, int num);
+int verPrimero(nodo * lista);
+nodo * borrarPrimerNodo(nodo * lista);
+nodo * IngresarNuevoDato();
+void recorrerYmostrar(nodo * lista);
+void mostrarNodo(nodo * aux);
 
 #endif // LISTA_H_INCLUDED
