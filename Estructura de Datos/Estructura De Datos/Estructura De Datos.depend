@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1665004826 source:c:\wamp64\www\bootcamp\estructura de datos\estructura de datos\lista.c
+	"lista.h"
+
+1665004848 c:\wamp64\www\bootcamp\estructura de datos\estructura de datos\lista.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1665004865 source:c:\wamp64\www\bootcamp\estructura de datos\estructura de datos\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"lista.h"
+
